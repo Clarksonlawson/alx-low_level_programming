@@ -1,7 +1,2 @@
 #!/bin/bash
-if [ -z "$CFILE" ]; then
-    echo "Please set the C file name in the variable \$CFILE."
-    exit 1
-fi
-OUTPUT_FILE="c"
-gcc -E "$CFILE" -o "$OUTPUT_FILE"
+gcc -E $CFILE -o c
