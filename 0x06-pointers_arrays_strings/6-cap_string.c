@@ -1,57 +1,30 @@
-#include "main.h"
-
-/**
- * is_separator - Check if a character is a word separator.
- * @c: The character to check.
- *
- * Return: 1 if it's a separator, 0 otherwise.
- */
-int is_separator(char c)
-{
-	/* Define word separators */
-	char separators[] = " \t\n,;.!?\"(){}";
-
-	for (int i = 0; separators[i]; i++)
-	{
-		if (c == separators[i])
-		{
-			return (1);
-		}
-	}
-	return (0);
-}
-
 /**
  * cap_string - Capitalizes all words in a string.
  * @str: The input string.
  *
- * Return: A pointer to the modified string.
+ * Return: A pointer to the resulting string.
  */
 char *cap_string(char *str)
 {
-	int capitalize_next = 1;
+	int i = 0;
 
-	for (int i = 0; str[i]; i++)
+	while (str[i] != '\0')
 	{
-		if (is_separator(str[i]))
+		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
+		    str[i] == ',' || str[i] == ';' || str[i] == '.' ||
+		    str[i] == '!' || str[i] == '?' || str[i] == '"' ||
+		    str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}')
 		{
-			capitalize_next = 1;
-		}
-		else if (capitalize_next)
-		{
-			if (str[i] >= 'a' && str[i] <= 'z')
+			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
 			{
-				str[i] -= 32; /* Convert to uppercase */
-			}
-			capitalize_next = 0;
-		}
-		else
-		{
-			if (str[i] >= 'A' && str[i] <= 'Z')
-			{
-				str[i] += 32; /* Convert to lowercase */
+				str[i + 1] = str[i + 1] - 32;
 			}
 		}
+		else if (i == 0 && str[i] >= 'a' && str[i] <= 'z')
+		{
+			str[i] = str[i] - 32;
+		}
+		i++;
 	}
 
 	return (str);
