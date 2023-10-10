@@ -14,7 +14,5 @@ struct dog
 	char *owner;
 };
 
-/* Function prototypes, if any */
-
 #endif /* DOG_H */
 
