@@ -1,9 +1,9 @@
 #include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
-i
+
 /**
- * print_listint_safe - Prints a listint_t linked list.
+ * print_listint_safe - Prints a listint_t linked list safely.
  * @head: Pointer to the head of the list.
  *
  * Return: The number of nodes in the list.
