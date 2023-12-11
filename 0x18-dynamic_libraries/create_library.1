@@ -1,0 +1,41 @@
+.TH CREATE_LIBRARY 1 "December 2023" "User Commands"
+
+.SH NAME
+create_library \- script to create a dynamic library from C source files
+
+.SH SYNOPSIS
+.B create_library
+
+.SH DESCRIPTION
+The \fBcreate_library\fP script simplifies the process of creating a dynamic library from C source files. It prompts the user to enter the filename (or '*' to select all .c files), compiles the source file(s), and generates a shared library.
+
+.SH OPTIONS
+.TP
+.B filename
+Enter the filename to proceed (e.g., 'filename') or type '*' to select all .c files.
+
+.TP
+.B library
+Enter the name of the library, excluding the extension '.so'.
+
+.SH EXAMPLES
+To use the script, run: create.sh
+.PP
+.B create_library
+
+.SH SEE ALSO
+.BR gcc (1)
+
+.SH AUTHOR
+Clarkson Awomu
+
+.SH BUGS
+None known.
+
+.SH COPYRIGHT
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+.SH NOTES
+This manual page was created by Clarkson Awomu.
+
